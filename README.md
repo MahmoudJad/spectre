@@ -79,6 +79,7 @@ Use the built-in script to populate the target index with default data:
 
 You can customize the script for bulk insertion, schema setup, mappings, or index refresh routines.
 
+---
 
 ### ⚙️ Configuration
 
@@ -88,6 +89,8 @@ Modify fluentd/fluent.conf to configure inputs, filters, and outputs.
 OpenSearch
 Adjust settings, mappings, credentials, or index names inside docker-compose.yml 
 
+---
+
 ### 📖 Logs
 View Fluentd logs:
 `docker logs spectre-fluentd`
@@ -95,6 +98,7 @@ View Fluentd logs:
 View OpenSearch logs:
 `docker logs spectre-opensearch`
 
+---
 
 ### 🤝 Contributing
 Contributions are welcome.
