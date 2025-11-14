@@ -1,0 +1,21 @@
+FROM fluent/fluentd:latest
+
+# Use root account to install packages
+USER root
+
+# Install plugins
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+        build-essential \
+        ruby-dev \
+ && gem install fluent-plugin-opensearch \
+ && gem sources --clear-all \
+ && apt-get purge -y --auto-remove \
+        build-essential \
+        ruby-dev \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* \
+           /home/fluent/.gem/ruby/*/cache/*.gem
+
+# Switch back to fluent user
+USER fluent
